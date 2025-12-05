@@ -249,7 +249,7 @@ p {
 }
 
 .logo img {
-  height: 60px;
+  height: 80px;
   width: auto;
   transition: transform var(--transition-base);
 }
@@ -399,7 +399,6 @@ p {
   padding: var(--spacing-lg);
   box-shadow: var(--shadow-md);
   transition: all var(--transition-base);
-  height: 100%;
 }
 
 .card:hover {
@@ -409,7 +408,7 @@ p {
 
 .card-icon {
   width: 60px;
-  height: 60px;
+  height: 80px;
   background: linear-gradient(115deg, #0f2d3f, #35627c);
   border-radius: var(--radius-lg);
   display: flex;
@@ -632,7 +631,7 @@ p {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
   }
 
   to {
@@ -642,7 +641,7 @@ p {
 }
 
 .fade-in-up {
-  animation: fadeInUp 0.6s ease-out;
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ============================================

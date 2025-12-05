@@ -1,5 +1,5 @@
 // ============================================
-// MAK Pflegedienst GmbH - Main JavaScript
+// MAK PFLEGEDIENST GmbH - Main JavaScript
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -85,24 +85,28 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   // ============================================
-  // Scroll Animations
+  // Scroll Animations - Improved for smoother appearance
   // ============================================
   const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0.05, // Trigger earlier for smoother effect
+    rootMargin: '0px 0px -100px 0px' // Start animation before element is fully visible
   };
   
   const observer = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('fade-in-up');
+        // Add delay based on element position for staggered effect
+        const delay = Array.from(entry.target.parentElement.children).indexOf(entry.target) * 100;
+        setTimeout(() => {
+          entry.target.classList.add('fade-in-up');
+        }, delay);
         observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
   
-  // Observe cards and sections
-  const animatedElements = document.querySelectorAll('.card, .section > .container > *');
+  // Observe cards and sections with improved selector
+  const animatedElements = document.querySelectorAll('.card, .hero-content, .grid > div');
   animatedElements.forEach(el => {
     observer.observe(el);
   });
@@ -117,38 +121,38 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
       
       // Get form fields
-      const name = document.querySelector('#name');
-      const email = document.querySelector('#email');
-      const phone = document.querySelector('#phone');
-      const message = document.querySelector('#message');
+      const nameField = document.querySelector('#name');
+      const emailField = document.querySelector('#email');
+      const phoneField = document.querySelector('#phone');
+      const messageField = document.querySelector('#message');
       
       let isValid = true;
       
       // Reset previous error states
-      [name, email, phone, message].forEach(field => {
+      [nameField, emailField, phoneField, messageField].forEach(field => {
         if (field) {
           field.style.borderColor = '';
         }
       });
       
       // Validate name
-      if (name && name.value.trim() === '') {
-        name.style.borderColor = '#DD2E39';
+      if (nameField && nameField.value.trim() === '') {
+        nameField.style.borderColor = '#DD2E39';
         isValid = false;
       }
       
       // Validate email
-      if (email) {
+      if (emailField) {
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (email.value.trim() === '' || !emailPattern.test(email.value)) {
-          email.style.borderColor = '#DD2E39';
+        if (emailField.value.trim() === '' || !emailPattern.test(emailField.value)) {
+          emailField.style.borderColor = '#DD2E39';
           isValid = false;
         }
       }
       
       // Validate message
-      if (message && message.value.trim() === '') {
-        message.style.borderColor = '#DD2E39';
+      if (messageField && messageField.value.trim() === '') {
+        messageField.style.borderColor = '#DD2E39';
         isValid = false;
       }
       
