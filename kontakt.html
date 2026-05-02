@@ -47,6 +47,18 @@
             </div>
         </div>
     </section>
+    <!-- Anfahrt -->
+    <section>
+
+        <div
+            style="background: var(--color-secondary-very-light-gray); padding: 1rem; border-radius: var(--radius-xl); text-align: center;">
+            <iframe
+                src="https://maps.google.com/maps?q=Josef-Orlopp-Stra%C3%9Fe%2054,%2010365%20Berlin&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%" height="300" style="border:0; border-radius: var(--radius-lg);" allowfullscreen=""
+                loading="lazy">
+            </iframe>
+        </div>
+    </section>
 
     <!-- Kontakt Informationen -->
     <section class="section">
@@ -56,44 +68,11 @@
                 <!-- Kontaktformular -->
                 <div>
                     <h2 class="mb-md">Schreiben Sie uns</h2>
-                    <p class="mb-lg">Nutzen Sie unser Kontaktformular für Anfragen, Beratungswünsche oder Feedback. Wir
+                    <p class="mb-lg">Senden Sie uns eine E-Mail für Anfragen, Beratungswünsche oder Feedback. Wir
                         melden uns zeitnah bei Ihnen zurück.</p>
 
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <label for="name" class="form-label">Name *</label>
-                            <input type="text" id="name" name="name" class="form-input" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email" class="form-label">E-Mail *</label>
-                            <input type="email" id="email" name="email" class="form-input" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone" class="form-label">Telefon</label>
-                            <input type="tel" id="phone" name="phone" class="form-input">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="subject" class="form-label">Betreff</label>
-                            <select id="subject" name="subject" class="form-select">
-                                <option value="">Bitte wählen...</option>
-                                <option value="beratung">Beratungsgespräch</option>
-                                <option value="intensivpflege">Intensivpflege</option>
-                                <option value="ambulant">Ambulante Pflege</option>
-                                <option value="karriere">Bewerbung / Karriere</option>
-                                <option value="sonstiges">Sonstiges</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message" class="form-label">Ihre Nachricht *</label>
-                            <textarea id="message" name="message" class="form-textarea" required></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary btn-large">Nachricht senden</button>
-                    </form>
+                    <a href="mailto:leitung@infomak-pflegedienst.de" class="btn btn-primary btn-large">E-Mail
+                        schreiben</a>
                 </div>
 
                 <!-- Kontaktdaten -->
@@ -101,12 +80,13 @@
                     <h2 class="mb-md">Kontaktdaten</h2>
 
                     <div class="card" style="margin-bottom: 1rem; padding: 1.25rem;">
-                        <div class="card-icon">📍</div>
-                        <h3 class="card-title" style="margin-bottom: 0.75rem;">Adresse</h3>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                            <div class="card-icon">📍</div>
+                            <h3 class="card-title" style="margin: 0;">Adresse</h3>
+                        </div>
                         <p class="card-text" style="margin-bottom: 0;">
                             MAK PFLEGEDIENST GmbH<br>
-                            Musterstraße 123<br>
-                            12345 Musterstadt<br>
+                            Josef - Orlopp Straße 54, 10365 Berlin <br>
                             Deutschland
                         </p>
                     </div>
@@ -115,9 +95,8 @@
                         <div class="card-icon">📞</div>
                         <h3 class="card-title" style="margin-bottom: 0.75rem;">Telefon</h3>
                         <p class="card-text" style="margin-bottom: 0;">
-                            <strong>Zentrale:</strong> +49 123 456 789<br>
-                            <strong>24h-Notfall:</strong> +49 123 456 790<br>
-                            <strong>Fax:</strong> +49 123 456 791
+                            <strong>Zentrale:</strong> 030 814 874 33<br>
+                            <strong>Rufbereitschaftnummer-24 h:</strong> 0162 8157 696<br>
                         </p>
                     </div>
 
@@ -125,18 +104,14 @@
                         <div class="card-icon">✉️</div>
                         <h3 class="card-title" style="margin-bottom: 0.75rem;">E-Mail</h3>
                         <p class="card-text" style="margin-bottom: 0;">
-                            <strong>Allgemein:</strong> info@mak-pflegedienst.de<br>
-                            <strong>Bewerbungen:</strong> bewerbung@mak-pflegedienst.de
-                        </p>
+                            leitung@infomak-pflegedienst.de<br> </p>
                     </div>
 
                     <div class="card" style="padding: 1.25rem;">
                         <div class="card-icon">🕐</div>
                         <h3 class="card-title" style="margin-bottom: 0.75rem;">Öffnungszeiten Büro</h3>
                         <p class="card-text" style="margin-bottom: 0;">
-                            <strong>Montag - Freitag:</strong> 08:00 - 17:00 Uhr<br>
-                            <strong>Samstag:</strong> Nach Vereinbarung<br>
-                            <strong>Sonntag:</strong> Geschlossen
+                            <strong>Montag - Freitag:</strong> 08:00 - 16:00 Uhr<br>
                         </p>
                         <p class="card-text"
                             style="margin-top: 1rem; font-weight: 500; color: var(--color-primary-red);">
@@ -149,37 +124,7 @@
         </div>
     </section>
 
-    <!-- Anfahrt -->
-    <section class="section section-light">
-        <div class="container">
-            <h2 class="text-center mb-lg">So finden Sie uns</h2>
 
-            <div class="grid grid-2" style="align-items: center; gap: 3rem;">
-                <div>
-                    <h3>Anfahrt</h3>
-                    <p><strong>Mit dem Auto:</strong> Wir befinden uns zentral in Musterstadt. Parkplätze sind direkt
-                        vor dem Gebäude vorhanden.</p>
-
-                    <p style="margin-top: 1.5rem;"><strong>Mit öffentlichen Verkehrsmitteln:</strong> Bushaltestelle
-                        "Musterplatz" (Linien 5, 12, 18) - nur 2 Minuten Fußweg entfernt.</p>
-
-                    <p style="margin-top: 1.5rem;"><strong>Barrierefreiheit:</strong> Unser Büro ist barrierefrei
-                        zugänglich. Ein Aufzug ist vorhanden.</p>
-                </div>
-
-                <div
-                    style="background: var(--color-secondary-very-light-gray); padding: 3rem; border-radius: var(--radius-xl); text-align: center;">
-                    <div
-                        style="width: 100%; height: 300px; background: linear-gradient(135deg, var(--color-primary-blue), var(--color-accent-turquoise)); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white; font-size: var(--font-size-lg);">
-                        🗺️<br>Karte Platzhalter<br>
-                        <small style="font-size: var(--font-size-sm); margin-top: 1rem; display: block;">
-                            (Google Maps Integration möglich)
-                        </small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Notfallkontakt -->
     <section class="section section-accent">
@@ -221,8 +166,18 @@
 
                 <div class="footer-section">
                     <h4>Kontakt</h4>
-                    <p>Musterstraße 123<br>12345 Musterstadt</p>
-                    <p>Tel: +49 123 456 789<br>E-Mail: info@mak-pflegedienst.de</p>
+                    <p><strong>Adresse:</strong> Josef - Orlopp Straße 54, 10365 Berlin</p> <strong>Bürozeiten:</strong>
+                    08:00 – 16:00
+                    Uhr<br>
+                    <strong>Telefon (Büro):</strong> 030 814 874 33
+                    </p>
+                    <p>
+                        <strong>24h Rufbereitschaft:</strong> 0162 8157 696
+                    </p>
+
+                    <p>
+                        <strong>E-Mail:</strong> leitung@infomak-pflegedienst.de
+                    </p>
                 </div>
 
                 <div class="footer-section">
