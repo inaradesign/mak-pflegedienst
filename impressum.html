@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Impressum - MAK PFLEGEDIENST GmbH - Rechtliche Angaben und Kontaktinformationen">
     <title>Impressum - MAK PFLEGEDIENST GmbH</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -18,7 +19,7 @@
                 <img src="images/logo.jpg" alt="MAK PFLEGEDIENST GmbH Logo">
             </a>
 
-            <nav>
+            <nav aria-label="Hauptnavigation">
                 <button class="mobile-menu-toggle" aria-label="Menü öffnen">
                     <span></span>
                     <span></span>
@@ -99,7 +100,6 @@
 
             <p>
                 <strong>E-Mail:</strong> leitung@infomak-pflegedienst.de
-            </p>
             </p>
 
             <h3 style="margin-top: 2rem;">Berufsbezeichnung und berufsrechtliche Regelungen</h3>
@@ -194,7 +194,6 @@
                     <p>Professionelle Pflege mit Herz und Kompetenz. Wir sind für Sie da – zuverlässig, einfühlsam und
                         mit höchster Fachkompetenz.</p>
                 </div>
-
                 <div class="footer-section">
                     <h4>Schnelllinks</h4>
                     <div class="footer-links">
@@ -205,23 +204,17 @@
                         <a href="karriere.html">Karriere</a>
                     </div>
                 </div>
-
                 <div class="footer-section">
                     <h4>Kontakt</h4>
-                    <p><strong>Adresse:</strong> Josef - Orlopp Straße 54, 10365 Berlin</p> <strong>Bürozeiten:</strong>
-                    08:00 – 16:00
-                    Uhr<br>
-                    <strong>Telefon (Büro):</strong> 030 814 874 33
-                    </p>
                     <p>
-                        <strong>24h Rufbereitschaft:</strong> 0162 8157 696
-                    </p>
-
-                    <p>
-                        <strong>E-Mail:</strong> leitung@infomak-pflegedienst.de
+                        <i class="fa-solid fa-location-dot"></i>
+                        <a href="https://www.google.com/maps?q=Josef-Orlopp-Straße+54,+10365+Berlin" target="_blank" rel="noopener noreferrer">Josef-Orlopp Straße 54, 10365 Berlin<br></a>
+                        <i class="fa-regular fa-clock"></i> 08:00 – 16:00 Uhr<br>
+                        <i class="fa-solid fa-phone"></i> Büro: <a href="tel:+493081487433">030 814 874 33</a><br>
+                        24h Rufbereitschaft: <a href="tel:+491628157696">0162 8157 696</a><br>
+                        <i class="fa-solid fa-envelope"></i> <a href="mailto:leitung@infomak-pflegedienst.de">leitung@infomak-pflegedienst.de</a>
                     </p>
                 </div>
-
                 <div class="footer-section">
                     <h4>Rechtliches</h4>
                     <div class="footer-links">
@@ -230,13 +223,13 @@
                     </div>
                 </div>
             </div>
-
             <div class="footer-bottom">
-                <p>&copy; 2025 MAK PFLEGEDIENST GmbH. Alle Rechte vorbehalten.</p>
+                <p>&copy; <span id="current-year">2025</span> MAK PFLEGEDIENST GmbH. Alle Rechte vorbehalten.</p>
             </div>
         </div>
     </footer>
 
+    <button class="back-to-top" aria-label="Nach oben scrollen">↑</button>
     <script src="js/main.js"></script>
 </body>
 

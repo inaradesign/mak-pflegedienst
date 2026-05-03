@@ -46,12 +46,12 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // ============================================
-  // Active Navigation Link
+  // Active Navigation Link (renamed to avoid shadowing)
   // ============================================
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  const navLinks = document.querySelectorAll('.nav-link');
+  const allNavLinks = document.querySelectorAll('.nav-link');
   
-  navLinks.forEach(link => {
+  allNavLinks.forEach(link => {
     const linkPage = link.getAttribute('href');
     if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
       link.classList.add('active');
@@ -88,14 +88,13 @@ document.addEventListener('DOMContentLoaded', function() {
   // Scroll Animations - Improved for smoother appearance
   // ============================================
   const observerOptions = {
-    threshold: 0.05, // Trigger earlier for smoother effect
-    rootMargin: '0px 0px -100px 0px' // Start animation before element is fully visible
+    threshold: 0.05,
+    rootMargin: '0px 0px -100px 0px'
   };
   
   const observer = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // Add delay based on element position for staggered effect
         const delay = Array.from(entry.target.parentElement.children).indexOf(entry.target) * 100;
         setTimeout(() => {
           entry.target.classList.add('fade-in-up');
@@ -105,110 +104,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }, observerOptions);
   
-  // Observe cards and sections with improved selector
   const animatedElements = document.querySelectorAll('.card, .hero-content, .grid > div');
   animatedElements.forEach(el => {
     observer.observe(el);
   });
-  
-  // ============================================
-  // Form Validation (Contact Form)
-  // ============================================
-  const contactForm = document.querySelector('#contact-form');
-  
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Get form fields
-      const nameField = document.querySelector('#name');
-      const emailField = document.querySelector('#email');
-      const phoneField = document.querySelector('#phone');
-      const messageField = document.querySelector('#message');
-      
-      let isValid = true;
-      
-      // Reset previous error states
-      [nameField, emailField, phoneField, messageField].forEach(field => {
-        if (field) {
-          field.style.borderColor = '';
-        }
-      });
-      
-      // Validate name
-      if (nameField && nameField.value.trim() === '') {
-        nameField.style.borderColor = '#DD2E39';
-        isValid = false;
-      }
-      
-      // Validate email
-      if (emailField) {
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (emailField.value.trim() === '' || !emailPattern.test(emailField.value)) {
-          emailField.style.borderColor = '#DD2E39';
-          isValid = false;
-        }
-      }
-      
-      // Validate message
-      if (messageField && messageField.value.trim() === '') {
-        messageField.style.borderColor = '#DD2E39';
-        isValid = false;
-      }
-      
-      if (isValid) {
-        // Show success message
-        const successMessage = document.createElement('div');
-        successMessage.style.cssText = `
-          background-color: #5BC8C8;
-          color: white;
-          padding: 1rem 1.5rem;
-          border-radius: 8px;
-          margin-top: 1rem;
-          text-align: center;
-          font-weight: 500;
-        `;
-        successMessage.textContent = 'Vielen Dank für Ihre Nachricht! Wir melden uns zeitnah bei Ihnen.';
-        
-        contactForm.appendChild(successMessage);
-        
-        // Reset form
-        contactForm.reset();
-        
-        // Remove success message after 5 seconds
-        setTimeout(() => {
-          successMessage.remove();
-        }, 5000);
-      } else {
-        // Show error message
-        const errorMessage = document.createElement('div');
-        errorMessage.style.cssText = `
-          background-color: #DD2E39;
-          color: white;
-          padding: 1rem 1.5rem;
-          border-radius: 8px;
-          margin-top: 1rem;
-          text-align: center;
-          font-weight: 500;
-        `;
-        errorMessage.textContent = 'Bitte füllen Sie alle Pflichtfelder korrekt aus.';
-        
-        // Remove existing error message if any
-        const existingError = contactForm.querySelector('.error-message');
-        if (existingError) {
-          existingError.remove();
-        }
-        
-        errorMessage.classList.add('error-message');
-        contactForm.appendChild(errorMessage);
-        
-        // Remove error message after 5 seconds
-        setTimeout(() => {
-          errorMessage.remove();
-        }, 5000);
-      }
-    });
-  }
   
   // ============================================
   // Back to Top Button (Optional Enhancement)
@@ -230,6 +129,14 @@ document.addEventListener('DOMContentLoaded', function() {
         behavior: 'smooth'
       });
     });
+  }
+  
+  // ============================================
+  // Dynamic Copyright Year
+  // ============================================
+  const yearSpan = document.getElementById('current-year');
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
   }
   
 });
